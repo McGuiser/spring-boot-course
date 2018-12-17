@@ -23,12 +23,9 @@
 
 ### IntelliJ IDEA ###
 
-.idea
-*
-.iws
-*
-.iml
-*
+.idea*
+.iws*
+.iml*
 .ipr
 
 
@@ -42,7 +39,5 @@
 /.nb-gradle/
 
 ### Eclipse ###
-.classpath
-.project
 .settings/
 .metadata/
