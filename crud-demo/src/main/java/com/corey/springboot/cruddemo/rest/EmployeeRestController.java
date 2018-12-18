@@ -7,27 +7,25 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.corey.springboot.cruddemo.dao.EmploeeDAO;
 import com.corey.springboot.cruddemo.entity.Employee;
+import com.corey.springboot.cruddemo.service.EmployeeService;
 
 @RestController
 @RequestMapping("/api")
 public class EmployeeRestController {
 	
-	private EmploeeDAO employeeDAO;
-
-	// Quick and dirty: inject employee dao
+	private EmployeeService employeeService;
 	
 	@Autowired
-	public EmployeeRestController(EmploeeDAO theEmploeeDAO) {
-		employeeDAO = theEmploeeDAO;
+	public EmployeeRestController(EmployeeService theEmployeeService) {
+		employeeService = theEmployeeService;
 	}
 	
 	// Expose "/employees" and return list of employees
 	
 	@GetMapping("/employees")
 	public List<Employee> findAll(){
-		return employeeDAO.findAll();
+		return employeeService.findAll();
 	}
 	
 }
